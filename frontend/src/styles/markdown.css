@@ -1,0 +1,287 @@
+/* ==================== Markdown Content Styles ==================== */
+
+.markdown-content {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  word-wrap: break-word;
+}
+
+/* 标题 */
+.markdown-content h1,
+.markdown-content h2,
+.markdown-content h3,
+.markdown-content h4,
+.markdown-content h5,
+.markdown-content h6 {
+  margin-top: 1.5em;
+  margin-bottom: 0.75em;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--text-primary);
+}
+
+.markdown-content h1 {
+  font-size: 1.875rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.markdown-content h2 {
+  font-size: 1.5rem;
+  padding-bottom: 0.375rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.markdown-content h3 {
+  font-size: 1.25rem;
+}
+
+.markdown-content h4 {
+  font-size: 1.125rem;
+}
+
+/* 段落 */
+.markdown-content p {
+  margin-bottom: 1.25em;
+  color: var(--text-secondary);
+}
+
+/* 链接 */
+.markdown-content a {
+  color: var(--accent-primary);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  transition: color var(--transition-fast);
+}
+
+.markdown-content a:hover {
+  color: var(--accent-hover);
+}
+
+/* 强调 */
+.markdown-content strong {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.markdown-content em {
+  font-style: italic;
+}
+
+/* 列表 */
+.markdown-content ul,
+.markdown-content ol {
+  margin-bottom: 1.25em;
+  padding-left: 2em;
+}
+
+.markdown-content li {
+  margin-bottom: 0.5em;
+  padding-left: 0.375em;
+  color: var(--text-secondary);
+}
+
+.markdown-content li > p {
+  margin-bottom: 0.5em;
+}
+
+/* 有序列表 - 自动编号 */
+.markdown-content ol {
+  counter-reset: item;
+  list-style: none;
+}
+
+.markdown-content ol > li {
+  counter-increment: item;
+  position: relative;
+}
+
+.markdown-content ol > li::before {
+  content: counter(item) ".";
+  position: absolute;
+  left: -2em;
+  width: 1.5em;
+  text-align: right;
+  color: var(--accent-primary);
+  font-weight: 600;
+}
+
+/* 嵌套列表 */
+.markdown-content ul ul,
+.markdown-content ol ul,
+.markdown-content ul ol,
+.markdown-content ol ol {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+/* 引用块 */
+.markdown-content blockquote {
+  margin: 1.5em 0;
+  padding: 0.75em 1.25em;
+  border-left: 4px solid var(--accent-primary);
+  background-color: var(--accent-light);
+  color: var(--text-secondary);
+  border-radius: var(--radius-sm);
+}
+
+.markdown-content blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+/* 代码 */
+.markdown-content code {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.875em;
+  background-color: var(--bg-tertiary);
+  padding: 0.2em 0.4em;
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+}
+
+/* 代码块 */
+.markdown-content pre {
+  margin: 1.5em 0;
+  padding: 1.25em;
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  overflow-x: auto;
+}
+
+.markdown-content pre code {
+  background-color: transparent;
+  padding: 0;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+/* 语法高亮（highlight.js 样式） */
+.markdown-content .hljs {
+  display: block;
+  overflow-x: auto;
+}
+
+/* 表格 */
+.markdown-content table {
+  width: 100%;
+  margin: 1.5em 0;
+  border-collapse: collapse;
+  border-spacing: 0;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+}
+
+.markdown-content thead {
+  background-color: var(--bg-tertiary);
+}
+
+.markdown-content th,
+.markdown-content td {
+  padding: 0.75em 1em;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.markdown-content th {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.markdown-content td {
+  color: var(--text-secondary);
+}
+
+.markdown-content tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.markdown-content tbody tr:hover {
+  background-color: var(--bg-hover);
+}
+
+/* 水平分割线 */
+.markdown-content hr {
+  margin: 2em 0;
+  border: none;
+  border-top: 2px solid var(--border-color);
+}
+
+/* 图片 */
+.markdown-content img {
+  max-width: 100%;
+  height: auto;
+  margin: 1.5em auto;
+  display: block;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+}
+
+/* 图片标题 */
+.markdown-content img + em {
+  display: block;
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--text-tertiary);
+  margin-top: -1em;
+  margin-bottom: 1.5em;
+}
+
+/* 任务列表 */
+.markdown-content input[type="checkbox"] {
+  margin-right: 0.5em;
+  cursor: pointer;
+}
+
+/* 删除线 */
+.markdown-content del {
+  color: var(--text-tertiary);
+  text-decoration: line-through;
+}
+
+/* 键盘按键 */
+.markdown-content kbd {
+  display: inline-block;
+  padding: 0.2em 0.5em;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.875em;
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 1px 0 var(--border-hover);
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+  .markdown-content {
+    font-size: 0.9375rem;
+  }
+  
+  .markdown-content h1 {
+    font-size: 1.625rem;
+  }
+  
+  .markdown-content h2 {
+    font-size: 1.375rem;
+  }
+  
+  .markdown-content h3 {
+    font-size: 1.125rem;
+  }
+  
+  .markdown-content pre {
+    padding: 1em;
+  }
+  
+  .markdown-content table {
+    font-size: 0.875rem;
+  }
+  
+  .markdown-content th,
+  .markdown-content td {
+    padding: 0.5em 0.75em;
+  }
+}
